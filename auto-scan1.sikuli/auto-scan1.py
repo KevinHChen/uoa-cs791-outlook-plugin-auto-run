@@ -8,10 +8,11 @@ def extract():
 
 def extract_olivia_laptop_scale_100():
     item = {}
-    item["result"] = Region(1562,466,346,34).text()
-    item["title"] = Region(425,201,752,32).text()
-    item["sender"]=Region(493,255,633,16).text()
-    item["details"]=Region(1629,699,229,341).text()
+    item["title"] = Region(422,204,729,29).text()
+    item["sead-result"] = Region(1496,461,395,47).text()
+    item["sender"]=Region(482,252,605,20).text()
+    item["veritas-tag"]=Region(447,301,97,15).text()
+    item["sead-details"]=Region(1559,693,272,439).text().encode("unicode_escape")
     return item
 
 def extract_olivia_laptop_scale_150():
@@ -22,7 +23,7 @@ def extract_olivia_laptop_scale_150():
 
 def scan():
     wait_time = 10
-    repeated = 2;
+    repeated = 200;
 
     result = {}
 
@@ -58,10 +59,10 @@ def save_list_of_dicts_as_csv(data_list):
         fieldnames = []
 
     # Write the list of dictionaries to the CSV file
-    with open(file_path, 'w') as csv_file:
+    with open(file_path, 'wb') as csv_file:
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(data_list)
 
 save_list_of_dicts_as_csv(scan())
-# print(scan())
+#print(scan())
