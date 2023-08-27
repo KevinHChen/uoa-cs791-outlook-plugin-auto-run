@@ -5,8 +5,8 @@ from email.header import Header
 
 
 def main():
-    legit_path = 'legitimate'
-    phishing_path = 'phishing'
+    legit_path = 'non-phishing-200'
+    phishing_path = 'phishing-2022-200'
     legit_head_phishing_body_path = "legit_head_phishing_body"
     phishing_head_legit_body_path = "phishing_head_legit_body"
 
